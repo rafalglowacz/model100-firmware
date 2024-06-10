@@ -187,10 +187,10 @@ enum {
   *
   */
 
-#define PRIMARY_KEYMAP_QWERTY
+// #define PRIMARY_KEYMAP_QWERTY
 // #define PRIMARY_KEYMAP_DVORAK
 // #define PRIMARY_KEYMAP_COLEMAK
-// #define PRIMARY_KEYMAP_CUSTOM
+#define PRIMARY_KEYMAP_CUSTOM
 
 
 /* This comment temporarily turns off astyle's indent enforcement
@@ -257,14 +257,14 @@ KEYMAPS(
    Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
+   Key_LeftGui, Key_LeftShift, Key_LeftControl, Key_LeftAlt,
    ShiftToLayer(FUNCTION),
 
    M(MACRO_ANY),  Key_6, Key_7, Key_8,     Key_9,         Key_0,         LockLayer(NUMPAD),
    Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
                   Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
    Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
+   Key_RightControl, Key_Backspace, Key_RightShift, Key_Spacebar,
    ShiftToLayer(FUNCTION)),
 
 #else
@@ -680,6 +680,21 @@ void setup() {
   // firmware starts with LED effects off. This avoids over-taxing devices that
   // don't have a lot of power to share with USB devices
   DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDOff);
+
+  QUKEYS(
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 1), Key_LeftGui),      // A
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 2), Key_LeftAlt),      // S
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 3), Key_LeftControl),  // D
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 4), Key_LeftShift),    // F
+    
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 11), Key_LeftShift),   // J
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 12), Key_LeftControl), // K
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 13), Key_LeftAlt),     // L
+    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 14), Key_LeftGui),     // ;
+    
+    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 3), Key_RightAlt),     // E
+    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 12), Key_RightAlt),    // I
+  );
 }
 
 /** loop is the second of the standard Arduino sketch functions.
