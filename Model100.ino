@@ -651,7 +651,7 @@ void setup() {
   // one wants to use these layers, just set the default layer to one in EEPROM,
   // by using the `settings.defaultLayer` Focus command, or by using the
   // `keymap.onlyCustom` command to use EEPROM layers only.
-  EEPROMKeymap.setup(8);
+  // EEPROMKeymap.setup(8);
 
   // We need to tell the Colormap plugin how many layers we want to have custom
   // maps for. To make things simple, we set it to eight layers, which is how
@@ -664,7 +664,7 @@ void setup() {
 
   // If there's a default layer set in EEPROM, we should set that as the default
   // here.
-  Layer.move(EEPROMSettings.default_layer());
+  // Layer.move(EEPROMSettings.default_layer());
 
   // To avoid any surprises, SpaceCadet is turned off by default. However, it
   // can be permanently enabled via Chrysalis, so we should only disable it if
