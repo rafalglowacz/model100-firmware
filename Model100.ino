@@ -32,34 +32,13 @@
 #include "Kaleidoscope-LayerNames.h"
 #include "Kaleidoscope-Steno.h"
 
-/** This 'enum' is a list of all the macros used by the Model 100's firmware
-  * The names aren't particularly important. What is important is that each
-  * is unique.
-  *
-  * These are the names of your macros. They'll be used in two places.
-  * The first is in your keymap definitions. There, you'll use the syntax
-  * `M(MACRO_NAME)` to mark a specific keymap position as triggering `MACRO_NAME`
-  *
-  * The second usage is in the 'switch' statement in the `macroAction` function.
-  * That switch statement actually runs the code associated with a macro when
-  * a macro key is pressed.
-  */
-
 enum {
   MACRO_VERSION_INFO,
   MACRO_ANY,
 };
 
 
-/** The Model 100's key layouts are defined as 'keymaps'. By default, there are three
-  * keymaps: The standard QWERTY keymap, the "Function layer" keymap and the "Numpad"
-  * keymap.
-  *
-  * Each keymap is defined as a list using the 'KEYMAP_STACKED' macro, built
-  * of first the left hand's layout, followed by the right hand's layout.
-  *
-  * Keymaps typically consist mostly of `Key_` definitions. There are many, many keys
-  * defined as part of the USB HID Keyboard specification. You can find the names
+/** You can find the names
   * (if not yet the explanations) for all the standard `Key_` defintions offered by
   * Kaleidoscope in these files:
   *    https://github.com/keyboardio/Kaleidoscope/blob/master/src/kaleidoscope/key_defs/keyboard.h
@@ -72,31 +51,6 @@ enum {
   *   using XXX to mark a keyswitch as 'blocked' on this layer
   *   using ShiftToLayer() and LockLayer() keys to change the active keymap.
   *   keeping NUM and FN consistent and accessible on all layers
-  *
-  * The PROG key is special, since it is how you indicate to the board that you
-  * want to flash the firmware. However, it can be remapped to a regular key.
-  * When the keyboard boots, it first looks to see whether the PROG key is held
-  * down; if it is, it simply awaits further flashing instructions. If it is
-  * not, it continues loading the rest of the firmware and the keyboard
-  * functions normally, with whatever binding you have set to PROG. More detail
-  * here: https://community.keyboard.io/t/how-the-prog-key-gets-you-into-the-bootloader/506/8
-  *
-  * The "keymaps" data structure is a list of the keymaps compiled into the firmware.
-  * The order of keymaps in the list is important, as the ShiftToLayer(#) and LockLayer(#)
-  * macros switch to key layers based on this list.
-  *
-  *
-
-  * A key defined as 'ShiftToLayer(FUNCTION)' will switch to FUNCTION while held.
-  * Similarly, a key defined as 'LockLayer(NUMPAD)' will switch to NUMPAD when tapped.
-  */
-
-/**
-  * Layers are "0-indexed" -- That is the first one is layer 0. The second one is layer 1.
-  * The third one is layer 2.
-  * This 'enum' lets us use names like QWERTY, FUNCTION, and NUMPAD in place of
-  * the numbers 0, 1 and 2.
-  *
   */
 
 enum {
@@ -105,25 +59,8 @@ enum {
   FUNCTION,
 };  // layers
 
-
-/**
-  * To change your keyboard's layout from QWERTY to DVORAK or COLEMAK, comment out the line
-  *
-  * #define PRIMARY_KEYMAP_QWERTY
-  *
-  * by changing it to
-  *
-  * // #define PRIMARY_KEYMAP_QWERTY
-  *
-  * Then uncomment the line corresponding to the layout you want to use.
-  *
-  */
-
 // #define PRIMARY_KEYMAP_QWERTY
-// #define PRIMARY_KEYMAP_DVORAK
-// #define PRIMARY_KEYMAP_COLEMAK
 #define PRIMARY_KEYMAP_CUSTOM
-
 
 /* This comment temporarily turns off astyle's indent enforcement
  *   so we can make the keymaps actually resemble the physical key layout better
@@ -147,41 +84,6 @@ KEYMAPS(
    Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
    Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
    ShiftToLayer(FUNCTION)),
-
-#elif defined (PRIMARY_KEYMAP_DVORAK)
-
-  [PRIMARY] = KEYMAP_STACKED
-  (___,          Key_1,         Key_2,     Key_3,      Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick, Key_Quote,     Key_Comma, Key_Period, Key_P, Key_Y, Key_Tab,
-   Key_PageUp,   Key_A,         Key_O,     Key_E,      Key_U, Key_I,
-   Key_PageDown, Key_Semicolon, Key_Q,     Key_J,      Key_K, Key_X, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
-   ShiftToLayer(FUNCTION),
-
-   M(MACRO_ANY),   Key_6, Key_7, Key_8, Key_9, Key_0, LockLayer(NUMPAD),
-   Key_Enter,      Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
-                   Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
-   Key_RightAlt,   Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
-   ShiftToLayer(FUNCTION)),
-
-#elif defined (PRIMARY_KEYMAP_COLEMAK)
-
-  [PRIMARY] = KEYMAP_STACKED
-  (___,          Key_1, Key_2, Key_3, Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick, Key_Q, Key_W, Key_F, Key_P, Key_B, Key_Tab,
-   Key_PageUp,   Key_A, Key_R, Key_S, Key_T, Key_G,
-   Key_PageDown, Key_Z, Key_X, Key_C, Key_D, Key_V, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
-   ShiftToLayer(FUNCTION),
-
-   M(MACRO_ANY),  Key_6, Key_7, Key_8,     Key_9,         Key_0,         LockLayer(NUMPAD),
-   Key_Enter,     Key_J, Key_L, Key_U,     Key_Y,         Key_Semicolon, Key_Equals,
-                  Key_M, Key_N, Key_E,     Key_I,         Key_O,         Key_Quote,
-   Key_RightAlt,  Key_K, Key_H, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
-   ShiftToLayer(FUNCTION)),
-
 #elif defined (PRIMARY_KEYMAP_CUSTOM)
   // Edit this keymap to make a custom layout
   [PRIMARY] = KEYMAP_STACKED
@@ -204,8 +106,6 @@ KEYMAPS(
 #error "No default keymap defined. You should make sure that you have a line like '#define PRIMARY_KEYMAP_QWERTY' in your sketch"
 
 #endif
-
-
 
   [NUMPAD] =  KEYMAP_STACKED
   (___, ___, ___, ___, ___, ___, ___,
@@ -241,11 +141,6 @@ KEYMAPS(
 /* Re-enable astyle's indent enforcement */
 // clang-format on
 
-/** versionInfoMacro handles the 'firmware version info' macro
- *  When a key bound to the macro is pressed, this macro
- *  prints out the firmware build information as virtual keystrokes
- */
-
 static void versionInfoMacro(uint8_t key_state) {
   if (keyToggledOn(key_state)) {
     Macros.type(PSTR("Keyboardio Model 100 - Firmware version "));
@@ -253,33 +148,12 @@ static void versionInfoMacro(uint8_t key_state) {
   }
 }
 
-/** anyKeyMacro is used to provide the functionality of the 'Any' key.
- *
- * When the 'any key' macro is toggled on, a random alphanumeric key is
- * selected. While the key is held, the function generates a synthetic
- * keypress event repeating that randomly selected key.
- *
- */
-
 static void anyKeyMacro(KeyEvent &event) {
   if (keyToggledOn(event.state)) {
     event.key.setKeyCode(Key_A.getKeyCode() + (uint8_t)(millis() % 36));
     event.key.setFlags(0);
   }
 }
-
-
-/** macroAction dispatches keymap events that are tied to a macro
-    to that macro. It takes two uint8_t parameters.
-
-    The first is the macro being called (the entry in the 'enum' earlier in this file).
-    The second is the state of the keyswitch. You can use the keyswitch state to figure out
-    if the key has just been toggled on, is currently pressed or if it's just been released.
-
-    The 'switch' statement should have a 'case' for each entry of the macro enum.
-    Each 'case' statement should call out to a function to handle the macro in question.
-
- */
 
 const macro_t *macroAction(uint8_t macro_id, KeyEvent &event) {
   switch (macro_id) {
@@ -299,7 +173,6 @@ const macro_t *macroAction(uint8_t macro_id, KeyEvent &event) {
 // These 'solid' color effect definitions define a rainbow of
 // LED color modes calibrated to draw 500mA or less on the
 // Keyboardio Model 100.
-
 
 static kaleidoscope::plugin::LEDSolidColor solidRed(160, 0, 0);
 static kaleidoscope::plugin::LEDSolidColor solidOrange(140, 70, 0);
@@ -332,23 +205,6 @@ void hostPowerManagementEventHandler(kaleidoscope::plugin::HostPowerManagement::
   toggleLedsOnSuspendResume(event);
 }
 
-/** This 'enum' is a list of all the magic combos used by the Model 100's
- * firmware The names aren't particularly important. What is important is that
- * each is unique.
- *
- * These are the names of your magic combos. They will be used by the
- * `USE_MAGIC_COMBOS` call below.
- */
-enum {
-  // Toggle between Boot (6-key rollover; for BIOSes and early boot) and NKRO
-  // mode.
-  COMBO_TOGGLE_NKRO_MODE,
-  // Enter test mode
-  COMBO_ENTER_TEST_MODE
-};
-
-/** Wrappers, to be used by MagicCombo. **/
-
 /**
  * This simply toggles the keyboard protocol via USBQuirks, and wraps it within
  * a function with an unused argument, to match what MagicCombo expects.
@@ -375,7 +231,6 @@ static void enterHardwareTestMode(uint8_t combo_index) {
   HardwareTestMode.runTests();
 }
 
-
 /** Magic combo list, a list of key combo and action pairs the firmware should
  * recognise.
  */
@@ -389,9 +244,6 @@ USE_MAGIC_COMBOS({.action = toggleKeyboardProtocol,
                   // Left Fn + Prog + Shift
                   .keys = {R3C6, R0C0, R3C7}});
 
-// First, tell Kaleidoscope which plugins you want to use.
-// The order can be important. For example, LED effects are
-// added in the order they're listed here.
 KALEIDOSCOPE_INIT_PLUGINS(
   // ----------------------------------------------------------------------
   // Chrysalis plugins
@@ -620,23 +472,16 @@ void setup() {
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 2), Key_LeftAlt),      // S
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 3), Key_LeftControl),  // D
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 4), Key_LeftShift),    // F
-    
+
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 11), Key_LeftShift),   // J
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 12), Key_LeftControl), // K
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 13), Key_LeftAlt),     // L
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 14), Key_LeftGui),     // ;
-    
+
     kaleidoscope::plugin::Qukey(0, KeyAddr(1, 3), Key_RightAlt),     // E
     kaleidoscope::plugin::Qukey(0, KeyAddr(1, 12), Key_RightAlt),    // I
   );
 }
-
-/** loop is the second of the standard Arduino sketch functions.
-  * As you might expect, it runs in a loop, never exiting.
-  *
-  * For Kaleidoscope-based keyboard firmware, you usually just want to
-  * call Kaleidoscope.loop(); and not do anything custom here.
-  */
 
 void loop() {
   Kaleidoscope.loop();
