@@ -679,7 +679,9 @@ void setup() {
   // Unless configured otherwise with Chrysalis, we want to make sure that the
   // firmware starts with LED effects off. This avoids over-taxing devices that
   // don't have a lot of power to share with USB devices
-  DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDOff);
+  // DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDOff);
+
+  DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDRainbowWaveEffect);
 
   QUKEYS(
     kaleidoscope::plugin::Qukey(0, KeyAddr(2, 1), Key_LeftGui),      // A
