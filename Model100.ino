@@ -70,34 +70,43 @@ enum {
 KEYMAPS(
 
 #if defined (PRIMARY_KEYMAP_QWERTY)
+
   [PRIMARY] = KEYMAP_STACKED
   (___,          Key_1, Key_2, Key_3, Key_4, Key_5, Key_LEDEffectNext,
    Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
+
+
    Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
    ShiftToLayer(FUNCTION),
 
-   M(MACRO_ANY),  Key_6, Key_7, Key_8,     Key_9,         Key_0,         LockLayer(NUMPAD),
-   Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
-                  Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
-   Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
-   ShiftToLayer(FUNCTION)),
+       M(MACRO_ANY),  Key_6, Key_7, Key_8,     Key_9,         Key_0,         LockLayer(NUMPAD),
+       Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
+                      Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
+       Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
+
+       Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
+       ShiftToLayer(FUNCTION)),
+
 #elif defined (PRIMARY_KEYMAP_CUSTOM)
+
   // Edit this keymap to make a custom layout
   [PRIMARY] = KEYMAP_STACKED
   (___,          ___,   ___,   ___,   ___,   ___, Key_LEDEffectNext,
    Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
+
    Key_LeftGui, Key_LeftShift, Key_LeftControl, Key_LeftAlt,
    ShiftToLayer(FUNCTION),
+
 
        M(MACRO_ANY),  ___,   ___,   ___,       ___,           ___,           LockLayer(NUMPAD),
        Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
                       Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
        ___,           Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
+
        Key_RightControl, Key_Backspace, Key_RightShift, Key_Spacebar,
        ShiftToLayer(FUNCTION)),
 
@@ -114,26 +123,31 @@ KEYMAPS(
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___,
    ___,
+   
 
        M(MACRO_VERSION_INFO),  ___, Key_7, Key_8,      Key_9,              Key_KeypadSubtract, ___,
        ___,                    ___, Key_4, Key_5,      Key_6,              Key_KeypadAdd,      ___,
                                ___, Key_1, Key_2,      Key_3,              Key_Equals,         ___,
        ___,                    ___, Key_0, Key_Period, Key_KeypadMultiply, Key_KeypadDivide,   Key_Enter,
+
        ___, ___, ___, ___,
        ___),
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___,      Key_F1,           Key_F2,      Key_F3,     Key_F4,        Key_F5,           Key_CapsLock,
-   Key_Tab,  ___,              Key_mouseUp, ___,        Key_mouseBtnR, Key_mouseWarpEnd, Key_mouseWarpNE,
+  (___,      Key_F1,           Key_F2,      Key_F3,          Key_F4,        Key_F5,           Key_CapsLock,
+   Key_Tab,  ___,              Key_mouseUp, ___,             Key_mouseBtnR, Key_mouseWarpEnd, Key_mouseWarpNE,
    Key_Home, Key_LeftGui,      Key_LeftAlt, Key_LeftControl, Key_LeftShift, Key_mouseWarpNW,
-   Key_End,  Key_PrintScreen,  Key_Insert,  ___,        Key_mouseBtnM, Key_mouseWarpSW,  Key_mouseWarpSE,
+   Key_End,  Key_PrintScreen,  Key_Insert,  ___,             Key_mouseBtnM, Key_mouseWarpSW,  Key_mouseWarpSE,
+
    ___, Key_Delete, ___, ___,
    ___,
+
 
        Consumer_ScanPreviousTrack, Key_F6,                 Key_F7,                   Key_F8,                   Key_F9,          Key_F10,          Key_F11,
        Consumer_PlaySlashPause,    Consumer_ScanNextTrack, Key_LeftCurlyBracket,     Key_UpArrow,              Key_LeftBracket, Key_RightBracket, Key_F12,
                                    Key_RightCurlyBracket,  Key_LeftArrow,            Key_DownArrow,            Key_RightArrow,  ___,              ___,
        Key_PcApplication,          Consumer_Mute,          Consumer_VolumeDecrement, Consumer_VolumeIncrement, ___,             Key_Backslash,    Key_Pipe,
+
        ___, ___, Key_Enter, ___,
        ___)
 ) // KEYMAPS(
