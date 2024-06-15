@@ -56,6 +56,7 @@ enum {
 enum {
   PRIMARY,
   NUMPAD,
+  NUMPAD_ALT,
   MOVE,
   FUNCTION,
   MOUSE,
@@ -110,7 +111,7 @@ KEYMAPS(
        ___,           Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
 
        ___, Key_Backspace, ShiftToLayer(MOUSE), Key_Spacebar,
-       ShiftToLayer(FUNCTION)),
+       ShiftToLayer(NUMPAD_ALT)),
 
 #else
 #error "No default keymap defined. You should make sure that you have a line like '#define PRIMARY_KEYMAP_QWERTY' in your sketch"
@@ -128,7 +129,24 @@ KEYMAPS(
        ___, ___,                ___,   ___,   ___,   ___,                ___,
        ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
             Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
-       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,                ___,
+       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
+
+       ___, ___, Key_Period, ___,
+       Key_Comma),
+
+  [NUMPAD_ALT] =  KEYMAP_STACKED
+  (___, ___, ___,   ___,   ___,   ___, ___,
+   ___, ___, LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
+   ___, ___, LSHIFT(Key_4), LSHIFT(Key_5), LSHIFT(Key_6), ___,
+   ___, ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_0), ___,
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___,                ___,   ___,   ___,   ___,                ___,
+       ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
+            Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
+       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
 
        ___, ___, Key_Period, ___,
        Key_Comma),
