@@ -60,6 +60,7 @@ enum {
   MOVE,
   FUNCTION,
   MOUSE,
+  SYMBOL,
 };
 
 // #define PRIMARY_KEYMAP_QWERTY
@@ -102,7 +103,7 @@ KEYMAPS(
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
 
    ShiftToLayer(MOVE), ShiftToLayer(NUMPAD), ___, ___,
-   ShiftToLayer(FUNCTION),
+   ShiftToLayer(SYMBOL),
 
 
        M(MACRO_ANY),  ___,   ___,   ___,       ___,           ___,           LockLayer(NUMPAD),
@@ -200,6 +201,23 @@ KEYMAPS(
        ___, ___, ___,        Key_mouseUp, ___,        ___, ___,
             ___, Key_mouseL, Key_mouseDn, Key_mouseR, ___, ___,
        ___, ___, ___,        ___,         ___,        ___, ___,
+
+       ___, ___, ___, ___,
+       ___),
+
+  [SYMBOL] = KEYMAP_STACKED
+  (___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___, ___,                  ___,                   ___,             ___,              ___,
+       ___, ___, Key_LeftCurlyBracket, Key_RightCurlyBracket, Key_LeftBracket, Key_RightBracket, ___,
+            ___, LSHIFT(Key_Comma),    LSHIFT(Key_Period),    ___,             ___,              ___,
+       ___, ___, ___,                  ___,                   ___,             Key_Backslash,    LSHIFT(Key_Backslash),
 
        ___, ___, ___, ___,
        ___),
@@ -541,7 +559,7 @@ void loop() {
 }
 
 // Template layer:
-  // [NUMPAD] =  KEYMAP_STACKED
+  // [NUMPAD] = KEYMAP_STACKED
   // (___, ___, ___, ___, ___, ___, ___,
   //  ___, ___, ___, ___, ___, ___, ___,
   //  ___, ___, ___, ___, ___, ___,
