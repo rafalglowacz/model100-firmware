@@ -207,7 +207,7 @@ KEYMAPS(
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
 
-   ShiftToLayer(MOVE), ShiftToLayer(NUMPAD), ___, ___,
+   ShiftToLayer(MAC_MOVE), ShiftToLayer(MAC_NUMPAD), ___, ___,
    ShiftToLayer(SYMBOL),
 
 
@@ -216,7 +216,7 @@ KEYMAPS(
                       Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
        ___,           Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
 
-       ___, Key_Backspace, ShiftToLayer(MOUSE), Key_Spacebar,
+       ___, Key_Backspace, ShiftToLayer(MAC_MOUSE), Key_Spacebar,
        ShiftToLayer(NUMPAD_ALT)),
 
   [MAC_NUMPAD] =  KEYMAP_STACKED
@@ -251,7 +251,7 @@ KEYMAPS(
             Key_PageDown, Key_LeftArrow, Key_DownArrow, Key_RightArrow, ___, ___,
        ___, ___,          ___,           ___,           ___,            ___, ___,
 
-       Key_PcApplication, Key_Delete, ___, ___,
+       ___, Key_Delete, ___, ___,
        ___),
 
   [MAC_FUNCTION] =  KEYMAP_STACKED
@@ -607,18 +607,33 @@ void setup() {
   DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDRainbowWaveEffect);
 
   QUKEYS(
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 1), Key_LeftGui),      // A
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 2), Key_LeftAlt),      // S
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 3), Key_LeftControl),  // D
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 4), Key_LeftShift),    // F
+    // Linux/Windows
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 1), Key_LeftGui),      // A
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 2), Key_LeftAlt),      // S
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 3), Key_LeftControl),  // D
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 4), Key_LeftShift),    // F
 
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 11), Key_LeftShift),   // J
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 12), Key_LeftControl), // K
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 13), Key_LeftAlt),     // L
-    kaleidoscope::plugin::Qukey(0, KeyAddr(2, 14), Key_LeftGui),     // ;
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 11), Key_LeftShift),   // J
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 12), Key_LeftControl), // K
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 13), Key_LeftAlt),     // L
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 14), Key_LeftGui),     // ;
 
-    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 3), Key_RightAlt),     // E
-    kaleidoscope::plugin::Qukey(0, KeyAddr(1, 12), Key_RightAlt),    // I
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(1, 3),  Key_RightAlt),    // E
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(1, 12), Key_RightAlt),    // I
+
+    // MacOS
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 1), Key_LeftControl),  // A
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 2), Key_LeftAlt),      // S
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 3), Key_LeftGui),      // D
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 4), Key_LeftShift),    // F
+
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 11), Key_LeftShift),   // J
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 12), Key_LeftGui),     // K
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 13), Key_LeftAlt),     // L
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 14), Key_LeftControl), // ;
+
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(1, 3),  Key_RightAlt),    // E
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(1, 12), Key_RightAlt),    // I
   );
 }
 
