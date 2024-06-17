@@ -166,18 +166,19 @@ KEYMAPS(
        ___),
 
   [MOUSE] =  KEYMAP_STACKED
-  (___, ___, ___,           ___,           ___,           ___, ___,
-   ___, ___, ___,           ___,           ___,           ___, ___,
-   ___, ___, Key_mouseBtnR, Key_mouseBtnM, Key_mouseBtnL, ___,
-   ___, ___, ___,           ___,           ___,           ___, ___,
-   ___, ___, ___,           ___,
+  (___,               ___,             ___,           ___,           ___,           ___, ___,
+   ___,               ___,             ___,           ___,           ___,           ___, ___,
+   Key_mouseScrollUp, ___,             Key_mouseBtnR, Key_mouseBtnM, Key_mouseBtnL, ___,
+   Key_mouseScrollDn, Key_LeftControl, Key_LeftAlt,   Key_LeftGui,   Key_LeftShift, ___, ___,
+
+   ___, ___, ___, ___,
    ___,
 
 
-       ___, ___, ___,        ___,         ___,        ___, ___,
-       ___, ___, ___,        Key_mouseUp, ___,        ___, ___,
-            ___, Key_mouseL, Key_mouseDn, Key_mouseR, ___, ___,
-       ___, ___, ___,        ___,         ___,        ___, ___,
+       ___, ___,             ___,              ___,         ___,              ___,             ___,
+       ___, Key_mouseWarpNW, Key_mouseScrollL, Key_mouseUp, Key_mouseScrollR, Key_mouseWarpNE, ___,
+            Key_mouseWarpSW, Key_mouseL,       Key_mouseDn, Key_mouseR,       Key_mouseWarpSE, ___,
+       ___, ___,             ___,              ___,         ___,              ___,             ___,
 
        ___, ___, ___, ___,
        ___),
@@ -187,6 +188,7 @@ KEYMAPS(
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___, ___,
+
    ___, ___, ___, ___,
    ___,
 
@@ -277,6 +279,7 @@ KEYMAPS(
    ___, ___, ___,           ___,           ___,           ___, ___,
    ___, ___, Key_mouseBtnR, Key_mouseBtnM, Key_mouseBtnL, ___,
    ___, ___, ___,           ___,           ___,           ___, ___,
+
    ___, ___, ___,           ___,
    ___,
 
