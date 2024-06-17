@@ -83,7 +83,7 @@ KEYMAPS(
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
 
-   ShiftToLayer(MOVE), ShiftToLayer(NUMPAD), ___, ___,
+   ShiftToLayer(MOVE), ShiftToLayer(NUMPAD), ShiftToLayer(FUNCTION), ___,
    ShiftToLayer(SYMBOL),
 
 
@@ -148,10 +148,10 @@ KEYMAPS(
        ___),
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___,                      ___,                        ___, ___, ___, ___, ___,
-   Consumer_VolumeIncrement, Consumer_ScanNextTrack,     ___, ___, ___, ___, ___,
-   Consumer_VolumeDecrement, Consumer_ScanPreviousTrack, ___, ___, ___, ___,
-   Consumer_Mute,            Consumer_PlaySlashPause,    ___, ___, ___, ___,  ___,
+  (___,                      ___,             ___,                         ___,                    ___,                     ___, ___,
+   Consumer_VolumeIncrement, ___,             ___,                         ___,                    ___,                     ___, ___,
+   Consumer_VolumeDecrement, Key_LeftControl, Key_LeftAlt,                 Key_LeftGui,            Key_LeftShift,           ___,
+   Consumer_Mute,            ___,             Consumer_ScanPreviousTrack,  Consumer_ScanNextTrack, Consumer_PlaySlashPause, ___, ___,
 
    ___, ___, ___, ___,
    ___,
@@ -191,10 +191,10 @@ KEYMAPS(
    ___,
 
 
-       ___, ___, ___,                  ___,                   ___,             ___,              ___,
-       ___, ___, Key_LeftCurlyBracket, Key_RightCurlyBracket, Key_LeftBracket, Key_RightBracket, ___,
-            ___, LSHIFT(Key_Comma),    LSHIFT(Key_Period),    ___,             ___,              ___,
-       ___, ___, ___,                  ___,                   ___,             Key_Backslash,    LSHIFT(Key_Backslash),
+       ___, ___, ___,                  ___,                   ___,                ___,                ___,
+       ___, ___, Key_LeftCurlyBracket, Key_RightCurlyBracket, ___,                ___,                ___,
+            ___, Key_LeftBracket,      Key_RightBracket,      LSHIFT(Key_Comma),  LSHIFT(Key_Period), ___,
+       ___, ___, ___,                  ___,                   ___,                Key_Backslash,      LSHIFT(Key_Backslash),
 
        ___, ___, ___, ___,
        ___),
@@ -207,7 +207,7 @@ KEYMAPS(
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
 
-   ShiftToLayer(MAC_MOVE), ShiftToLayer(MAC_NUMPAD), ___, ___,
+   ShiftToLayer(MAC_MOVE), ShiftToLayer(MAC_NUMPAD), ShiftToLayer(MAC_FUNCTION), ___,
    ShiftToLayer(SYMBOL),
 
 
@@ -255,10 +255,10 @@ KEYMAPS(
        ___),
 
   [MAC_FUNCTION] =  KEYMAP_STACKED
-  (___,                      ___,                        ___, ___, ___, ___, ___,
-   Consumer_VolumeIncrement, Consumer_ScanNextTrack,     ___, ___, ___, ___, ___,
-   Consumer_VolumeDecrement, Consumer_ScanPreviousTrack, ___, ___, ___, ___,
-   Consumer_Mute,            Consumer_PlaySlashPause,    ___, ___, ___, ___,  ___,
+  (___,                      ___,         ___,                         ___,                    ___,                     ___, ___,
+   Consumer_VolumeIncrement, ___,         ___,                         ___,                    ___,                     ___, ___,
+   Consumer_VolumeDecrement, Key_LeftGui, Key_LeftAlt,                 Key_LeftControl,        Key_LeftShift,           ___,
+   Consumer_Mute,            ___,         Consumer_ScanPreviousTrack,  Consumer_ScanNextTrack, Consumer_PlaySlashPause, ___, ___,
 
    ___, ___, ___, ___,
    ___,
@@ -269,7 +269,7 @@ KEYMAPS(
             ___, Key_F4, Key_F5, Key_F6, Key_F11, ___,
        ___, ___, Key_F1, Key_F2, Key_F3, Key_F10, ___,
 
-       ___, ___, ___, Key_F12,
+       ___, ___, ___, ___,
        ___),
 
   [MAC_MOUSE] =  KEYMAP_STACKED
