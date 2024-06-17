@@ -61,6 +61,11 @@ enum {
   FUNCTION,
   MOUSE,
   SYMBOL,
+  MAC_PRIMARY,
+  MAC_NUMPAD,
+  MAC_MOVE,
+  MAC_FUNCTION,
+  MAC_MOUSE,
 };
 
 /* This comment temporarily turns off astyle's indent enforcement
@@ -69,6 +74,9 @@ enum {
 // clang-format off
 
 KEYMAPS(
+
+  // Linux/Windows layout
+
   [PRIMARY] = KEYMAP_STACKED
   (___,          ___,   ___,   ___,   ___,   ___,   Key_LEDEffectNext,
    Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
@@ -190,6 +198,97 @@ KEYMAPS(
 
        ___, ___, ___, ___,
        ___),
+
+  // MacOS layout
+
+  [MAC_PRIMARY] = KEYMAP_STACKED
+  (___,          ___,   ___,   ___,   ___,   ___,   Key_LEDEffectNext,
+   Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
+   Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
+   Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
+
+   ShiftToLayer(MOVE), ShiftToLayer(NUMPAD), ___, ___,
+   ShiftToLayer(SYMBOL),
+
+
+       M(MACRO_ANY),  ___,   ___,   ___,       ___,           ___,           LockLayer(NUMPAD),
+       Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
+                      Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
+       ___,           Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
+
+       ___, Key_Backspace, ShiftToLayer(MOUSE), Key_Spacebar,
+       ShiftToLayer(NUMPAD_ALT)),
+
+  [MAC_NUMPAD] =  KEYMAP_STACKED
+  (___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___,                ___,   ___,   ___,   ___,                ___,
+       ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
+            Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
+       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
+
+       ___, ___, Key_Period, ___,
+       Key_Comma),
+
+  [MAC_MOVE] =  KEYMAP_STACKED
+  (___,  ___,        ___,         ___,             ___,          ___,         ___,
+   ___, LGUI(Key_1), LGUI(Key_2), LGUI(Key_3),     LGUI(Key_4),  LGUI(Key_5), ___,
+   ___, Key_LeftGui, Key_LeftAlt, Key_LeftControl, Key_LeftShift, ___,
+   ___, LGUI(Key_6), LGUI(Key_7), LGUI(Key_8),     LGUI(Key_9),  LGUI(Key_0), ___,
+
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___,          ___,           ___,           ___,            ___, ___,
+       ___, Key_PageUp,   Key_Home,      Key_UpArrow,   Key_End,        ___, ___,
+            Key_PageDown, Key_LeftArrow, Key_DownArrow, Key_RightArrow, ___, ___,
+       ___, ___,          ___,           ___,           ___,            ___, ___,
+
+       Key_PcApplication, Key_Delete, ___, ___,
+       ___),
+
+  [MAC_FUNCTION] =  KEYMAP_STACKED
+  (___,                      ___,                        ___, ___, ___, ___, ___,
+   Consumer_VolumeIncrement, Consumer_ScanNextTrack,     ___, ___, ___, ___, ___,
+   Consumer_VolumeDecrement, Consumer_ScanPreviousTrack, ___, ___, ___, ___,
+   Consumer_Mute,            Consumer_PlaySlashPause,    ___, ___, ___, ___,  ___,
+
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___, ___, ___, ___, ___, ___,
+       ___, ___, Key_F7, Key_F8, Key_F9, Key_F12, ___,
+            ___, Key_F4, Key_F5, Key_F6, Key_F11, ___,
+       ___, ___, Key_F1, Key_F2, Key_F3, Key_F10, ___,
+
+       ___, ___, ___, Key_F12,
+       ___),
+
+  [MAC_MOUSE] =  KEYMAP_STACKED
+  (___, ___, ___,           ___,           ___,           ___, ___,
+   ___, ___, ___,           ___,           ___,           ___, ___,
+   ___, ___, Key_mouseBtnR, Key_mouseBtnM, Key_mouseBtnL, ___,
+   ___, ___, ___,           ___,           ___,           ___, ___,
+   ___, ___, ___,           ___,
+   ___,
+
+
+       ___, ___, ___,        ___,         ___,        ___, ___,
+       ___, ___, ___,        Key_mouseUp, ___,        ___, ___,
+            ___, Key_mouseL, Key_mouseDn, Key_mouseR, ___, ___,
+       ___, ___, ___,        ___,         ___,        ___, ___,
+
+       ___, ___, ___, ___,
+       ___),
+
 ) // KEYMAPS(
 
 /* Re-enable astyle's indent enforcement */
