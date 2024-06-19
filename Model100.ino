@@ -239,10 +239,10 @@ KEYMAPS(
        Key_Comma),
 
   [MAC_MOVE] =  KEYMAP_STACKED
-  (___, ___,           ___,           ___,             ___,           ___,            ___,
-   ___, HYPER(Key_F1), HYPER(Key_F2), HYPER(Key_F3),   HYPER(Key_F4), HYPER(Key_F5),  ___,
-   ___, Key_LeftGui,   Key_LeftAlt,   Key_LeftControl, Key_LeftShift, ___,
-   ___, HYPER(Key_F6), HYPER(Key_F7), HYPER(Key_F8),   HYPER(Key_F9), HYPER(Key_F10), ___,
+  (___, ___,             ___,           ___,             ___,           ___,            ___,
+   ___, HYPER(Key_F1),   HYPER(Key_F2), HYPER(Key_F3),   HYPER(Key_F4), HYPER(Key_F5),  ___,
+   ___, Key_LeftControl, Key_LeftAlt,   Key_LeftGui,     Key_LeftShift, ___,
+   ___, HYPER(Key_F6),   HYPER(Key_F7), HYPER(Key_F8),   HYPER(Key_F9), HYPER(Key_F10), ___,
 
    ___, ___, ___, ___,
    ___,
@@ -257,10 +257,10 @@ KEYMAPS(
        ___),
 
   [MAC_FUNCTION] =  KEYMAP_STACKED
-  (___,                      ___,         ___,                         ___,                    ___,                     ___, ___,
-   Consumer_VolumeIncrement, ___,         ___,                         ___,                    ___,                     ___, ___,
-   Consumer_VolumeDecrement, Key_LeftGui, Key_LeftAlt,                 Key_LeftControl,        Key_LeftShift,           ___,
-   Consumer_Mute,            ___,         Consumer_ScanPreviousTrack,  Consumer_ScanNextTrack, Consumer_PlaySlashPause, ___, ___,
+  (___,                      ___,             ___,                         ___,                    ___,                     ___, ___,
+   Consumer_VolumeIncrement, ___,             ___,                         ___,                    ___,                     ___, ___,
+   Consumer_VolumeDecrement, Key_LeftControl, Key_LeftAlt,                 Key_LeftGui,            Key_LeftShift,           ___,
+   Consumer_Mute,            ___,             Consumer_ScanPreviousTrack,  Consumer_ScanNextTrack, Consumer_PlaySlashPause, ___, ___,
 
    ___, ___, ___, MoveToLayer(PRIMARY),
    ___,
