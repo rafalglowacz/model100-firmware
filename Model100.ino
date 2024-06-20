@@ -84,7 +84,7 @@ KEYMAPS(
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
 
    ShiftToLayer(MOVE), ShiftToLayer(NUMPAD), ShiftToLayer(FUNCTION), ___,
-   ShiftToLayer(SYMBOL),
+   OSL(SYMBOL),
 
 
        M(MACRO_ANY), ___,   ___,   ___,       ___,        ___,           LockLayer(NUMPAD),
@@ -93,7 +93,7 @@ KEYMAPS(
        ___,          Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_Minus,
 
        ___, Key_Backspace, ShiftToLayer(MOUSE), Key_Spacebar,
-       ShiftToLayer(NUMPAD_ALT)),
+       OSL(NUMPAD_ALT)),
 
   [NUMPAD] =  KEYMAP_STACKED
   (___, ___, ___, ___, ___, ___, ___,
@@ -210,7 +210,7 @@ KEYMAPS(
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
 
    ShiftToLayer(MAC_MOVE), ShiftToLayer(MAC_NUMPAD), ShiftToLayer(MAC_FUNCTION), ___,
-   ShiftToLayer(SYMBOL),
+   OSL(SYMBOL),
 
 
        M(MACRO_ANY),  ___,   ___,   ___,       ___,           ___,           LockLayer(NUMPAD),
@@ -219,7 +219,7 @@ KEYMAPS(
        ___,           Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
 
        ___, Key_Backspace, ShiftToLayer(MAC_MOUSE), Key_Spacebar,
-       ShiftToLayer(NUMPAD_ALT)),
+       OSL(NUMPAD_ALT)),
 
   [MAC_NUMPAD] =  KEYMAP_STACKED
   (___, ___, ___, ___, ___, ___, ___,
@@ -275,19 +275,19 @@ KEYMAPS(
        ___),
 
   [MAC_MOUSE] =  KEYMAP_STACKED
-  (___,               ___,         ___,           ___,             ___,           ___, ___,
-   ___,               ___,         ___,           ___,             ___,           ___, ___,
-   Key_mouseScrollUp, ___,         Key_mouseBtnR, Key_mouseBtnM,   Key_mouseBtnL, ___,
-   Key_mouseScrollDn, Key_LeftGui, Key_LeftAlt,   Key_LeftControl, Key_LeftShift, ___, ___,
+  (___,               ___,         ___,           ___,             ___,           ___,             ___,
+   ___,               ___,         ___,           ___,             ___,           ___,             Key_mouseWarpNE,
+   Key_mouseScrollUp, ___,         Key_mouseBtnR, Key_mouseBtnM,   Key_mouseBtnL, Key_mouseWarpNW,
+   Key_mouseScrollDn, Key_LeftGui, Key_LeftAlt,   Key_LeftControl, Key_LeftShift, Key_mouseWarpSW, Key_mouseWarpSE,
 
    ___, ___, ___, ___,
    ___,
 
 
-       ___, ___,             ___,               ___,              ___,              ___,             ___,
-       ___, ___,             Key_mouseScrollUp, Key_mouseUp,      ___,              ___,             ___,
-            Key_mouseWarpNW, Key_mouseL,        Key_mouseDn,      Key_mouseR,       Key_mouseWarpNE, ___,
-       ___, Key_mouseWarpSW, Key_mouseScrollDn, Key_mouseScrollL, Key_mouseScrollR, Key_mouseWarpSE, ___,
+       ___, ___,               ___,              ___,         ___,              ___,              ___,
+       ___, ___,               ___,              Key_mouseUp, ___,              ___,              ___,
+            Key_mouseScrollUp, Key_mouseL,       Key_mouseDn, Key_mouseR,       Key_mouseScrollL, Key_mouseScrollR,
+       ___, Key_mouseScrollDn, Key_mouseScrollL, ___,         Key_mouseScrollR, Key_mouseScrollL, Key_mouseScrollR,
 
        ___, ___, ___, ___,
        ___),
