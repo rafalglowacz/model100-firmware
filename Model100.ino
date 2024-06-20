@@ -121,13 +121,13 @@ KEYMAPS(
    ___,
 
 
-       ___, ___,                ___,   ___,   ___,   ___,                ___,
-       ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
-            Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
-       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
+       ___, ___,            ___,                  ___,                 ___,                   ___,            ___,
+       ___, ___,            HYPER(Key_0),         HYPER(Key_UpArrow),  ___,                   ___,            ___,
+            HYPER(Key_F15), HYPER(Key_LeftArrow), ___,                 HYPER(Key_RightArrow), HYPER(Key_F13), HYPER(Key_F14),
+       ___, ___,            ___,                  ___,                 ___,                   ___,            ___,
 
-       ___, ___, Key_Period, ___,
-       Key_Comma),
+       ___, ___, ___, ___,
+       ___),
 
   [MOVE] =  KEYMAP_STACKED
   (___,  ___,        ___,         ___,             ___,          ___,         ___,
