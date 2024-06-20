@@ -55,16 +55,16 @@ enum {
 
 enum {
   PRIMARY,
-  NUMPAD,
-  NUMPAD_ALT,
   MOVE,
   FUNCTION,
+  NUMPAD,
+  NUMPAD_ALT,
   MOUSE,
   SYMBOL,
   MAC_PRIMARY,
-  MAC_NUMPAD,
   MAC_MOVE,
   MAC_FUNCTION,
+  MAC_NUMPAD,
   MAC_MOUSE,
 };
 
@@ -94,40 +94,6 @@ KEYMAPS(
 
        ___, Key_Backspace, ShiftToLayer(MOUSE), Key_Spacebar,
        OSL(NUMPAD_ALT)),
-
-  [NUMPAD] =  KEYMAP_STACKED
-  (___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___,
-   ___,
-
-
-       ___, ___,                ___,   ___,   ___,   ___,                ___,
-       ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
-            Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
-       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
-
-       ___, ___, Key_Period, ___,
-       Key_Comma),
-
-  [NUMPAD_ALT] =  KEYMAP_STACKED
-  (___, ___, ___,   ___,   ___,   ___, ___,
-   ___, ___, LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
-   ___, ___, LSHIFT(Key_4), LSHIFT(Key_5), LSHIFT(Key_6), ___,
-   ___, ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_0), ___,
-   ___, ___, ___, ___,
-   ___,
-
-
-       ___, ___,            ___,                  ___,                 ___,                   ___,            ___,
-       ___, ___,            HYPER(Key_0),         HYPER(Key_UpArrow),  ___,                   ___,            ___,
-            HYPER(Key_F15), HYPER(Key_LeftArrow), ___,                 HYPER(Key_RightArrow), HYPER(Key_F13), HYPER(Key_F14),
-       ___, ___,            ___,                  ___,                 ___,                   ___,            ___,
-
-       ___, ___, ___, ___,
-       ___),
 
   [MOVE] =  KEYMAP_STACKED
   (___,  ___,        ___,         ___,             ___,          ___,         ___,
@@ -163,6 +129,40 @@ KEYMAPS(
        ___, ___, Key_F1, Key_F2, Key_F3, Key_F10, ___,
 
        ___, ___, ___, Key_F12,
+       ___),
+
+  [NUMPAD] =  KEYMAP_STACKED
+  (___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___,                ___,   ___,   ___,   ___,                ___,
+       ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
+            Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
+       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
+
+       ___, ___, Key_Period, ___,
+       Key_Comma),
+
+  [NUMPAD_ALT] =  KEYMAP_STACKED
+  (___, ___, ___,   ___,   ___,   ___, ___,
+   ___, ___, LSHIFT(Key_7), LSHIFT(Key_8), LSHIFT(Key_9), LSHIFT(Key_0), ___,
+   ___, ___, LSHIFT(Key_4), LSHIFT(Key_5), LSHIFT(Key_6), ___,
+   ___, ___, LSHIFT(Key_1), LSHIFT(Key_2), LSHIFT(Key_3), LSHIFT(Key_0), ___,
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___,            ___,                  ___,                 ___,                   ___,            ___,
+       ___, ___,            HYPER(Key_0),         HYPER(Key_UpArrow),  ___,                   ___,            ___,
+            HYPER(Key_F15), HYPER(Key_LeftArrow), ___,                 HYPER(Key_RightArrow), HYPER(Key_F13), HYPER(Key_F14),
+       ___, ___,            ___,                  ___,                 ___,                   ___,            ___,
+
+       ___, ___, ___, ___,
        ___),
 
   [MOUSE] =  KEYMAP_STACKED
@@ -221,23 +221,6 @@ KEYMAPS(
        ___, Key_Backspace, ShiftToLayer(MAC_MOUSE), Key_Spacebar,
        OSL(NUMPAD_ALT)),
 
-  [MAC_NUMPAD] =  KEYMAP_STACKED
-  (___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___,
-   ___,
-
-
-       ___, ___,                ___,   ___,   ___,   ___,                ___,
-       ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
-            Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
-       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
-
-       ___, ___, Key_Period, ___,
-       Key_Comma),
-
   [MAC_MOVE] =  KEYMAP_STACKED
   (___, ___,             ___,           ___,             ___,           ___,            ___,
    ___, HYPER(Key_F1),   HYPER(Key_F2), HYPER(Key_F3),   HYPER(Key_F4), HYPER(Key_F5),  ___,
@@ -273,6 +256,23 @@ KEYMAPS(
 
        ___, ___, ___, Key_F12,
        ___),
+
+  [MAC_NUMPAD] =  KEYMAP_STACKED
+  (___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___,
+   ___,
+
+
+       ___, ___,                ___,   ___,   ___,   ___,                ___,
+       ___, ___,                Key_7, Key_8, Key_9, Key_KeypadMultiply, Key_Enter,
+            Key_KeypadSubtract, Key_4, Key_5, Key_6, Key_KeypadAdd,      Key_KeypadSubtract,
+       ___, Key_0,              Key_1, Key_2, Key_3, Key_KeypadDivide,   ___,
+
+       ___, ___, Key_Period, ___,
+       Key_Comma),
 
   [MAC_MOUSE] =  KEYMAP_STACKED
   (___,               ___,         ___,           ___,             ___,           ___,             ___,
