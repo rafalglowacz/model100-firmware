@@ -123,12 +123,12 @@ KEYMAPS(
    ___,
 
 
-       ___, ___, ___, ___, ___, ___, ___,
+       ___, ___, ___,    ___,    ___,    ___,     Key_PrintScreen,
        ___, ___, Key_F7, Key_F8, Key_F9, Key_F12, ___,
             ___, Key_F4, Key_F5, Key_F6, Key_F11, ___,
        ___, ___, Key_F1, Key_F2, Key_F3, Key_F10, ___,
 
-       ___, ___, ___, Key_F12,
+       ___, ___, Key_F12, ___,
        ___),
 
   [NUMPAD] =  KEYMAP_STACKED
@@ -254,7 +254,7 @@ KEYMAPS(
             ___, Key_F4, Key_F5, Key_F6, Key_F11, ___,
        ___, ___, Key_F1, Key_F2, Key_F3, Key_F10, ___,
 
-       ___, ___, ___, Key_F12,
+       ___, ___, Key_F12, ___,
        ___),
 
   [MAC_NUMPAD] =  KEYMAP_STACKED
