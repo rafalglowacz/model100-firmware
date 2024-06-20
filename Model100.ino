@@ -166,19 +166,19 @@ KEYMAPS(
        ___),
 
   [MOUSE] =  KEYMAP_STACKED
-  (___,               ___,             ___,           ___,           ___,           ___, ___,
-   ___,               ___,             ___,           ___,           ___,           ___, ___,
-   Key_mouseScrollUp, ___,             Key_mouseBtnR, Key_mouseBtnM, Key_mouseBtnL, ___,
-   Key_mouseScrollDn, Key_LeftControl, Key_LeftAlt,   Key_LeftGui,   Key_LeftShift, ___, ___,
+  (___,               ___,         ___,           ___,             ___,           ___,             ___,
+   ___,               ___,         ___,           ___,             ___,           ___,             Key_mouseWarpNE,
+   Key_mouseScrollUp, ___,         Key_mouseBtnR, Key_mouseBtnM,   Key_mouseBtnL, Key_mouseWarpNW,
+   Key_mouseScrollDn, Key_LeftGui, Key_LeftAlt,   Key_LeftControl, Key_LeftShift, Key_mouseWarpSW, Key_mouseWarpSE,
 
    ___, ___, ___, ___,
    ___,
 
 
-       ___, ___,             ___,               ___,              ___,              ___,             ___,
-       ___, ___,             Key_mouseScrollUp, Key_mouseUp,      ___,              ___,             ___,
-            Key_mouseWarpNW, Key_mouseL,        Key_mouseDn,      Key_mouseR,       Key_mouseWarpNE, ___,
-       ___, Key_mouseWarpSW, Key_mouseScrollDn, Key_mouseScrollL, Key_mouseScrollR, Key_mouseWarpSE, ___,
+       ___, ___,               ___,              ___,         ___,              ___,              ___,
+       ___, ___,               ___,              Key_mouseUp, ___,              ___,              ___,
+            Key_mouseScrollUp, Key_mouseL,       Key_mouseDn, Key_mouseR,       Key_mouseScrollL, Key_mouseScrollR,
+       ___, Key_mouseScrollDn, Key_mouseScrollL, ___,         Key_mouseScrollR, Key_mouseScrollL, Key_mouseScrollR,
 
        ___, ___, ___, ___,
        ___),
@@ -608,6 +608,9 @@ void setup() {
   // DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDOff);
 
   DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDRainbowWaveEffect);
+
+  MouseKeys.setCursorInitSpeed(3);
+  MouseKeys.setCursorBaseSpeed(25);
 
   QUKEYS(
     // Linux/Windows
