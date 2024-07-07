@@ -618,7 +618,9 @@ void setup() {
     kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 2), Key_LeftAlt),      // S
     kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 3), Key_LeftControl),  // D
     kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 4), Key_LeftShift),    // F
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 5), Key_LeftGui),      // G
 
+    kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 10), Key_LeftGui),     // H
     kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 11), Key_LeftShift),   // J
     kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 12), Key_LeftControl), // K
     kaleidoscope::plugin::Qukey(PRIMARY, KeyAddr(2, 13), Key_LeftAlt),     // L
@@ -632,7 +634,9 @@ void setup() {
     kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 2), Key_LeftAlt),      // S
     kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 3), Key_LeftGui),      // D
     kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 4), Key_LeftShift),    // F
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 5), Key_LeftControl),  // G
 
+    kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 10), Key_LeftControl), // H
     kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 11), Key_LeftShift),   // J
     kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 12), Key_LeftGui),     // K
     kaleidoscope::plugin::Qukey(MAC_PRIMARY, KeyAddr(2, 13), Key_LeftAlt),     // L
