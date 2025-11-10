@@ -92,7 +92,7 @@ KEYMAPS(
                      Key_H, Key_J, Key_K,     Key_L,      Key_Semicolon, Key_Quote,
        ___,          Key_N, Key_M, Key_Comma, Key_Period, Key_Slash,     Key_Minus,
 
-       ___, Key_Backspace, ShiftToLayer(MOUSE), Key_Spacebar,
+       ShiftToLayer(FUNCTION), Key_Backspace, ShiftToLayer(MOUSE), Key_Spacebar,
        OSL(NUMPAD_ALT)),
 
   [MOVE] =  KEYMAP_STACKED
@@ -115,9 +115,9 @@ KEYMAPS(
 
   [FUNCTION] =  KEYMAP_STACKED
   (___,                      ___,             ___,                         ___,                    ___,                     ___, ___,
-   Consumer_VolumeIncrement, ___,             ___,                         ___,                    ___,                     ___, ___,
-   Consumer_VolumeDecrement, Key_LeftControl, Key_LeftAlt,                 Key_LeftGui,            Key_LeftShift,           ___,
-   Consumer_Mute,            ___,             Consumer_ScanPreviousTrack,  Consumer_ScanNextTrack, Consumer_PlaySlashPause, ___, ___,
+   Consumer_Mute,            ___,             ___,                         ___,                    ___,                     ___, ___,
+   Consumer_VolumeIncrement, Key_LeftControl, Key_LeftAlt,                 Key_LeftGui,            Key_LeftShift,           ___,
+   Consumer_VolumeDecrement, ___,             Consumer_ScanPreviousTrack,  Consumer_ScanNextTrack, Consumer_PlaySlashPause, ___, ___,
 
    ___, ___, ___, MoveToLayer(MAC_PRIMARY),
    ___,
