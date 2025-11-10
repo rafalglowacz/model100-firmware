@@ -106,9 +106,9 @@ KEYMAPS(
 
 
        ___, ___,          ___,           ___,           ___,            ___, ___,
-       ___, Key_PageUp,   Key_Home,      Key_UpArrow,   Key_End,        ___, ___,
-            Key_PageDown, Key_LeftArrow, Key_DownArrow, Key_RightArrow, ___, ___,
-       ___, ___,          ___,           ___,           ___,            ___, ___,
+       ___, ___,          Key_Home,      Key_UpArrow,   Key_End,        ___, ___,
+            Key_PageUp,   Key_LeftArrow, Key_DownArrow, Key_RightArrow, ___, ___,
+       ___, Key_PageDown, ___,           ___,           ___,            ___, ___,
 
        Key_PcApplication, Key_Delete, ___, ___,
        ___),
