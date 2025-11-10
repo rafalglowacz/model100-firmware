@@ -186,7 +186,7 @@ KEYMAPS(
   [SYMBOL] = KEYMAP_STACKED
   (___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___,
+   ___, Key_LeftGui, Key_LeftAlt, Key_LeftControl, Key_LeftShift, ___,
    ___, ___, ___, ___, ___, ___, ___,
 
    ___, ___, ___, ___,
@@ -196,7 +196,7 @@ KEYMAPS(
        ___, ___, ___,                  ___,                   ___,                ___,                ___,
        ___, ___, Key_LeftCurlyBracket, Key_RightCurlyBracket, ___,                ___,                ___,
             ___, Key_LeftBracket,      Key_RightBracket,      LSHIFT(Key_Comma),  LSHIFT(Key_Period), ___,
-       ___, ___, ___,                  ___,                   ___,                Key_Backslash,      LSHIFT(Key_Backslash),
+       ___, ___, Key_LeftParen,        Key_RightParen,        ___,                Key_Backslash,      LSHIFT(Key_Backslash),
 
        ___, ___, ___, ___,
        ___),
